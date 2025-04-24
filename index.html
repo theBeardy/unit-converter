@@ -8,16 +8,16 @@
 </head>
 <body>
     <h1 id="page-title">Interior Design Unit Converter</h1>
-    <hr>
     <div id="container">
         <div class="conversion">
             <h2>Unit Conversion</h2>
             <p>Instructions: </p>
             <input id="conv-input" placeholder="12 ft, 30cm, etc"/>
             <button id="calc-conv">Calculate</button>
-            <div id="conv-res"></div>
+            <div id="conv-res">
+                <div class="table"><table id="conv-table"></table></div>
+            </div>
         </div>
-        <hr>
         <div class="area">
             <h2>Area Calculator</h2>
             <input placeholder="Length"/>
@@ -26,7 +26,6 @@
             <button id="calc-area">Calculate</button>
         </div>
     </div>
-    
 </body>
 <script src="./script.js"></script>
 </html>

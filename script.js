@@ -5,6 +5,7 @@ const calcArea = document.getElementById('calc-area');
 const conversionInput = document.getElementById('conv-input');
 const conversionOutput = document.getElementById('conv-res');
 const areaResult = document.getElementById('area-res');
+const convTable = document.getElementById('conv-table');
 
 const measures = {
     'm': {
@@ -79,15 +80,19 @@ const inputEval = (str) => {
 
 const convertUnits = (num, obj) => {
     const number = parseFloat(num);
-    
-    conversionOutput.innerHTML = '';
+
+    convTable.innerHTML = ``    
     for (const key in obj) {
         console.log(obj[key])
         const converted = Math.round(number * obj[key] * 100) / 100;
-        conversionOutput.innerHTML += `<div id="${key}">${key}: ${converted}</div>`
+        convTable.innerHTML += `
+        <tr>
+            <th id="${key}">${key}:</th>
+            <td>${converted}</td>
+        </tr>`
     }
 }
 
 calcConversion.addEventListener('click', () => {
-    inputEval(conversionInput.value)
+    inputEval(conversionInput.value);
 })
